@@ -1,6 +1,35 @@
-# React + TypeScript + Vite
+# Todo Ledger
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React mini-application demonstrating paginated server-state management with TanStack Query, MSW, TypeScript, Vitest, and Testing Library.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+The app fetches six todos per page from JSONPlaceholder and caches each visited page for one minute.
+
+## Commands
+
+```bash
+npm run build   # type-check and create a production build
+npm run lint    # run ESLint
+npm test        # run the MSW-backed Vitest suite
+```
+
+## Functionality
+
+- Paginated todo data with Previous and Next controls.
+- Cached pages and `keepPreviousData` keep transitions stable while the next page loads.
+- Animated loading skeletons, empty-state messaging, and a retryable error state.
+- MSW intercepts the JSONPlaceholder request in tests, so tests do not depend on the network.
+- Tests cover loading and success rendering, page navigation/cache behavior, and recovery after an API error.
+
+## Theming
+
+The interface uses a paper, ink, and lime palette with Manrope for UI text and DM Mono for metadata. CSS variables keep the theme easy to adjust, while the responsive layout switches to compact stacked controls below 600px.
 
 Currently, two official plugins are available:
 
